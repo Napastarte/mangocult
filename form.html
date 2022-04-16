@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+	<!--Définition du head (encodage, titre de la page, lien vers fichier css, icone de la page)-->
+	<head>
+		<title>S'inscrire | Le culte de La Sainte Mangue</title>
+		<meta charset="utf-8"/>
+		<link rel="icon" type="image/png" href="images/mango_logo.png"/>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	<body>
+
+		<!--Mise en place du menu de navigation et de l'affichage du titre principal de la page-->
+		<header>
+			<a class="title" href="index.html"><h1>🥭🥭🥭 Le Culte de la Sainte Mangue 🥭🥭🥭</h1></a>
+			<nav>
+				<a href="index.html"><button class=nav>Accueil</button></a>
+				<a href="membre.html"><button class=nav>Nos membres</button></a>
+				<a href="test.html"><button class=nav>Calculateurs</button></a>
+				<a href="form.html"><button class=last>Test</button></a>
+			</nav>
+		</header>
+
+		<!--Section dédiée au contenu de la page-->
+		<section id="page">
+
+			<!--Section dédiée à la zone de formulaire-->
+			<section id="mangue">
+				<h2>Êtes-vous une mangue ?</h2>
+				<p>
+					La question que l'on se pose finalement est la suivante, êtes-vous l'élu ? Êtes-vous La Raison sans même le savoir ? Incarnez-vous la marche à suivre pour la population entière ? Allez-vous nous sauver de la décadence de l'humanité ?<br>Pour savoir cela, veuillez remplir le formulaire suivant :
+				</p>
+
+				<!--Première partie de formulaire-->
+				<form id="form1">
+
+					<!--Entrée texte pour le nom de famille-->
+					<p>
+						<label>Nom</label>
+						<input id="formNom" type="text" placeholder="Nom" value=""/>
+					</p>
+
+					<!--Entrée texte pour le prénom-->
+					<p>
+						<label>Prénom</label>
+						<input id="formSurname" type="text" placeholder="Prénom"/>
+					</p>
+
+					<!--Entrée nombre ayant pour minimum 0 pour l'âge-->
+					<p>
+						<label>Age</label>
+						<input id="formAge" type="number" placeholder="Age" min="0"/>
+					</p>
+
+					<p>
+						<!--Liste déroulante permetant un choix de sexe-->
+						<label>Sexe:</label>
+						<select id="formSex">
+							<option value="n">-choix-</option>
+							<option value="m">M</option>
+							<option value="f">F</option>
+							<option value="a">Autre</option>
+						</select>
+
+						<!--Liste déroulante permetant un choix de genre-->
+						<label>Genre:</label>
+						<select id=formGender>
+							<option value="n">-choix-</option>
+							<option value="man">Homme</option>
+							<option value="woman">Femme</option>
+							<option value="other">Autre</option>
+						</select>
+
+						<!--Liste déroulante permetant un choix de pronoms-->
+						<label>Pronoms</label>
+						<select id="formPronouns">
+							<option value="n">-choix-</option>
+							<option value="he">Il</option>
+							<option value="she">Elle</option>
+							<option value="they">Autre</option>
+						</select>
+					</p>
+
+					<!--Radio-boutons permettant d'indiquer si on est marié-->
+					<p>
+						<label>Êtes-vous marié ?</label>
+						<input id="married" type="radio" name="mariage" value="oui"/><label>Oui</label>
+						<input id="notMarried" type="radio" name="mariage" value="non"/><label>Non</label>
+					</p>
+
+					<!--Radio-boutons permettant d'indiquer si on est coonsommateur d'alcool-->
+					<p>
+						<label>Consommez-vous de l'alcool ?</label>
+						<input id="alcool" type="radio" name="alcool" value="oui"/><label>Oui</label>
+						<input id="notAlcool" type="radio" name="alcool" value="non"/><label>Non</label>
+					</p>
+
+					<!--Radio-boutons permettant d'indiquer si on est fumeur-->
+					<p>
+						<label>Fumez-vous ?</label>
+						<input id="smoke" type="radio" name="smoke" value="oui"/><label>Oui</label>
+						<input id="notSmoke" type="radio" name="smoke" value="non"/><label>Non</label>
+					</p>
+
+					<!--Liste déroulante permettant d'indiquer quel est son régime alimentaire-->
+					<p>
+						<label>Quel est votre régime alimentaire ?</label>
+						<select id="aliment">
+							<option value="n">-choix-</option>
+							<option value="carnivore">Carnivore</option>
+							<option value="omnivore">Omnivore</option>
+							<option value="vegetarien">Végétarien</option>
+							<option value="vegan">Végan</option>
+						</select>
+					</p>
+
+					<!--Bouton de validation de la première partie du formulaire-->
+					<input type="button" value="Voir mes résultats" onclick="mangoValidate()"/>
+				</form>
+
+				<!--Balises vides qui contiendront les résultats du test, fourni pas un script JavaScript en bas de page-->
+				<h3 id="reponse"></h3>
+				<p id="reponse2"></p>
+
+				<!--Seconde partie du formulaire-->
+				<form id="form2" hidden="true">
+					<img src="images/citron_lunettes.png" width="40%" height="40%" alt="Culte de l'Angélique Citron"/><br/>
+					<strong>Que vous évoque cette image ?</strong>
+
+					<!--Radio-boutons permettant de choisir une réponse à la question posée-->
+					<p class="lemon">
+						<input type="radio" name="lemon" id="rire"/><label>Cela me fait rire</label><br/>
+						<input type="radio" name="lemon" id="colere/"><label>Cela m'évoque de la colère</label><br/>
+						<input type="radio" name="lemon" id="exist"/><label>Ces individus ne devraient pas exister</label><br/>
+						<input type="radio" name="lemon" id="aime"/><label>J'aime beaucoup ces personnes</label><br/>
+						<input type="radio" name="lemon" id="miam"/><label>Miam</label>
+					</p>
+
+					<!--Bouton de validation de la seconde partie du formulaire-->
+					<input type="button" value="Voir mes résultats" onclick="mangoValidate2()"/>
+				</form>				
+			</section>
+		</section>
+
+		<!--Script JavaScript servant au bon fonctionnement du formulaire-->
+		<script type="text/javascript">
+			// Définition de la variable mangue qui va contenir nos résultats
+			var mangue=0
+
+			// Fonction dédiée au traitement de la première partie du formulaire
+			function mangoValidate()
+			{
+				// Récupération des entrées selon le type d'input, tout cela via ID
+				let nom=document.getElementById('formNom').value;
+				let prenom=document.getElementById('formSurname').value;
+				let age=document.getElementById('formAge').value;
+				let sex=document.getElementById('formSex')[document.getElementById('formSex').selectedIndex].value;
+				let gender=document.getElementById('formGender')[document.getElementById('formGender').selectedIndex].value;
+				let pronouns=document.getElementById('formPronouns')[document.getElementById('formPronouns').selectedIndex].value;
+
+				if (document.getElementById('married').checked==true)
+				{
+					var mariage=true;
+				}
+				else if (document.getElementById('notMarried').checked==true)
+				{
+					var mariage=false;
+				}
+				else
+				{
+					var mariage="none";
+				}
+
+
+				if (document.getElementById('smoke').checked==true)
+				{
+					var smoke=true;
+				}
+				else if (document.getElementById('notSmoke').checked==true)
+				{
+					var smoke=false;
+				}
+				else
+				{
+					var smoke="none";
+				}
+
+
+				var aliment=document.getElementById('aliment')[document.getElementById('aliment').selectedIndex].value;
+
+
+				// Vérification du formulaire : A-t-il été entièrement rempli ? Si oui, n'y a-t-il pas de données fausses (âge négatif par exemple) ?
+				if (nom=="")
+				{
+					alert('[ERREUR] : Vous n\'avez pas entré de nom !');
+				}
+				else if (prenom=="")
+				{
+					alert('[ERREUR] : Vous n\'avez pas entré de prénom !');
+				}
+				else if (age==""|| parseInt(age) < 0)
+				{
+					alert('[ERREUR] : Vous n\'avez pas entré d\'âge valide !');
+				}
+				else if (sex=='n')
+				{
+					alert('[ERREUR] : Vous n\'avez pas sélectionné de sexe !');
+				}
+				else if (gender=="n")
+				{
+					alert('[ERREUR] : Vous n\'avez pas sélectionné de genre !');
+				}
+				else if (pronouns=='n')
+				{
+					alert('[ERREUR] : Vous n\'avez pas sélectionné de pronoms !');
+				}
+				else if (mariage=="none")
+				{
+					alert('[ERREUR] : Vous n\'avez pas indiqué si vous êtes marié ou non !');
+				}
+				else if (smoke=="none")
+				{
+					alert('[ERREUR] : Vous n\'avez pas indiqué si vous fumez ou non !');
+				}
+				else if (aliment=="n")
+				{
+					alert('[ERREUR] : Vous n\'avez pas indiqué votre régime alimentaire !');
+				}
+
+				// Cas où tout est en règle
+				else
+				{
+					// Gestion du nom
+					if (nom.toLowerCase()=="rabien")
+					{
+						mangue+=10;
+					}
+					else
+					{
+						mangue+=5;
+					}
+
+					// Gestion du prénom
+					if (prenom.toLowerCase()=="merrie")
+					{
+						mangue+=10;
+					}
+					else
+					{
+						mangue+=5;
+					}
+
+					// Gestion de l'âge
+					if (parseInt(age)%2===0)
+					{
+						mangue+=10;
+					}
+					else
+					{
+						mangue+=3;
+					}
+
+					// Gestion du sexe
+					if (sex=="a")
+					{
+						mangue+=15;
+					}
+					else
+					{
+						mangue+=6;
+					}
+
+					// Gestion du genre
+					if (gender=="other")
+					{
+						mangue+=15;
+					}
+					else
+					{
+						mangue+=5;
+					}
+
+					// Gestion des pronoms  
+					if (pronouns=="they")
+					{
+						mangue+=20;
+					}
+					else
+					{
+						mangue+=6;
+					}
+
+					// Gestion du mariage
+					if (married==true)
+					{
+						mangue+=3;
+					}
+					else
+					{
+						mangue+=10;
+					}
+
+					// Gestion des choses à fumer
+					if (smoke==true)
+					{
+						mangue-=15;
+					}
+					else
+					{
+						mangue+=3;
+					}
+
+					// Gestion du régime alimentaire
+					if (aliment=="vegan")
+					{
+						mangue+=20;
+					}
+					else if (aliment=="vegetarien")
+					{
+						mangue+=10;
+					}
+					else if (aliment=="omnivore")
+					{
+						mangue+=0;
+					}
+					else
+					{
+						mangue-=10;
+					}
+
+					// Affichage de la seconde partie du formulaire et dissimulation de la première
+					document.getElementById('form1').style.display="none";
+					document.getElementById('form2').style.display="block";
+				}
+
+			}
+
+			// Fonction dédiée au traitement de la seconde partie du formulaire
+			function mangoValidate2()
+			{
+				// Facteur citron qui va être modifié selon la réponse de l'utilisateur
+				let lemon=0;
+				if (document.getElementById("rire").checked==true)
+				{
+					lemon=200;
+					
+				}
+				else if (document.getElementById("colere").checked==true)
+				{
+					lemon=150;
+
+				}
+				else if (document.getElementById("exist").checked==true)
+				{
+					lemon=113;
+
+				}
+				else if (document.getElementById("miam").checked==true)
+				{
+					lemon=400;
+
+				}
+				else if (document.getElementById("aime").checked==true)
+				{
+					lemon=-113;
+
+				}
+
+				// Si le facteur citron à été modifié, on effectue la suite. Sinon rien ne se passe
+				if (lemon!=0)
+				{
+					// On cache la seconde partie du formulaire
+					document.getElementById('form2').style.display="none";
+
+					// On applique une formule obscure de ma propre conception pour donner un résultat
+					mangue=parseInt(mangue*100/lemon);
+
+					// On affiche le résultat dans une balise prévue à cet effet
+					document.getElementById('reponse').innerHTML="Vous êtes à "+mangue+"% une mangue !";
+
+					// On affiche un texte commentant le résultat dans une balise prévue à cet effet selon différentes tranches
+					if (mangue < 0)
+					{
+						document.getElementById('reponse2').innerHTML="Wow ! Comment avez-vous réussi à toucher des nombres négatifs ? C'est remarquable mais pas vraiment pour les bonnes raisons... Vous êtes totalement opposé à notre philosophie, et je dirais même plus, vous êtes un ennemi féroce: un adorateur de l'Angélique Citron ! Un tel comportement est inacceptable selon nos préceptes mais nous sommes toujours ouverts pour vous offrir le pardon et vous remettre sur le droit chemin.";
+					}
+					else if (mangue < 25)
+					{
+						document.getElementById('reponse2').innerHTML="Vous n'êtes pas le plus fervent ni le plus sage mais vous essayez. Peut-être est-ce par pur hasard mais vos résultats affirment que vous suivez d'une manière ou d'une autre un peu nos préceptes. Nous vous en félicitons et nous vous encourageons à faire plus pour votre propre bien-être. N'oubliez pas que la mangue est avec vous.";
+					}
+					else if (mangue < 50)
+						document.getElementById('reponse2').innerHTML="Vous avez toutes les félicitons de l'équipe de création de ce test. Vos efforts payent et vous représentez un bel espoir pour l'avenir de ce monde. Vous n'êtes peut-être pas parfait mais vous n'êtes pas non plus un citron. Vous cheminez à votre rythme vers l'absolue perfection et méritez bien des éloges.";
+					else if (mangue < 75)
+					{
+						document.getElementById('reponse2').innerHTML="Impressionnant ! Peu de gens arrivent jusque-là vous savez. Vous êtes un modèle de sagesse pour tous et chacun a beaucoup à apprendre de vous. Vos résultats indiquent que vous avez un esprit qui est en voie de se rapprocher de La Raison. Continuez votre chemin !";
+					}
+				
+					else if (mangue < 99)
+					{
+						document.getElementById('reponse2').innerHTML="Vous avez tout mon respect. Les résultats indiquent que vous êtes très proche de l'esprit de La Raison. Le respect des préceptes est pour vous naturel et chaque être vit en vous comme vous vivez en chaque être. Vous êtes en communion totale avec votre environnement dont la protection vous tient particulièrement à cœur. Il y a de fortes chances que vous n'ayez jamais mangé de viande. Si ce n'est pas le cas alors vous pouvez être très fier de votre parcours.";
+					}
+					else
+					{
+						document.getElementById('reponse2').innerHTML="Vous êtes un individu tout simplement fantastique. Vous jouez jeu égal avec La Raison, une parfaite réincarnation ! J'en perds mes mots tant vous êtes fantastique. La Raison existe, cet individu se trouve sur cette Terre. Trouvez-le et bâtissez un monde nouveau ensemble. Détruisez les puissances qui promettent un bonheur fallacieux au peuple. Guidez-le dans cette ère nouvelle que vous allez apporter ensemble, l'ère de La Raison !";
+					}	
+				}
+			}
+		</script>
+
+		<!--Section dédiée au pied de la page-->
+		<section id=footer>
+			<a href="#top"><button id=anchor>Haut de page</button><br/></a>
+			<img src="images/mague_petit.png" width="10%" height="10%" alt='Image de mangue'>
+			
+			<!--Je signe mon site internet et j'avertis l'utilisateur de la nature entièrement fictive des faits avancés-->
+			<p id=footer>
+				Le contenu de ce site est entièrement fictif.<br/>Toute ressemblance avec la réalité est purement fortuite.<br/>Copyright © 2022 Vienne Mathys. Tous droits réservés.
+			</p>
+		</section>
+	</body>
+</html>

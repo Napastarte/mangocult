@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+	<!--Définition du head (encodage, titre de la page, lien vers fichier css, icone de la page)-->
+	<head>
+		<title>Tests | Le culte de La Sainte Mangue</title>
+		<meta charset="utf-8"/>
+		<link rel="icon" type="image/png" href="images/mango_logo.png"/>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+
+	<body>
+
+		<!--Mise en place du menu de navigation et de l'affichage du titre principal de la page-->
+		<header>
+			<a class="title" href="index.html"><h1>🥭🥭🥭 Le Culte de la Sainte Mangue 🥭🥭🥭</h1></a>
+			<nav>
+				<a href="index.html"><button class=nav>Accueil</button></a>
+				<a href="membre.html"><button class=nav>Nos membres</button></a>
+				<a href="test.html"><button class=nav>Calculateurs</button></a>
+				<a href="form.html"><button class=last>Test</button></a>
+			</nav>
+		</header>
+
+		<!--Section dédiée au contenu de la page-->
+		<section id=page>
+
+			<!--Sommaire des calculateurs presents sur la page-->
+
+			<!--Les différents ID sont décalés pour des raisons d'affichage: sur la page, le menu de navigation étant prévu pour être fixe, il dissimule une partie de la page. Pour y remédier, j'ai donc décalé mes ID qui servent aux liens du sommaire de la page-->
+			<p id="age">
+				Sur cette page, nous vous proposons une myriade de services liés à la mangue :
+				<a href="#age"><h3>Quel est votre âge en mangue ?</h3></a>
+				<a href="#poids"><h3>Quel est votre poids en mangue ?</h3></a>
+				<a href="#taille"><h3>Quelle est votre taille en mangue ?</h3></a>
+				<a href="#valeur"><h3>Quel est votre pourcentage de mangue ?</h3></a>				
+			</p>
+
+			<!--Section dédiée au calcul de l'age en mangue-->
+			<section id="poids">
+				<h4>Quel est votre âge en mangues ?</h4>
+				<p>
+					En effet, cette question a toujours été au centre de nos débats. La sagesse s'un fidèle doit-elle se mesurer à son âge ? La question reste ouverte et voici un indicateur permettant de connaitre le vôtre.
+				</p>
+
+				<!--Entrée nombres pour l'âge avec un minimum de 0 pour éviter les nombres négatifs + bouton validation lié à un script JavaScript en bas de page-->
+				<input id="askAge" type="number" placeholder="Entrez votre âge" min="0"/>
+				<input type="button" value="Calculer" onclick="calcAge()"/>
+
+				<!--Balise p vide associée à un ID qui contiendra la réponse correspondante envoyée par un script JavaScript située en bas de page-->
+				<p>Résultat : </p><p id="rAge"></p>
+				<p>
+					En effet, les mangues ont une durée de vie d'environ 8 jours. Grâce à un algorithme développé par Elon Musk en collaboration avec notre groupe, nous sommes en mesure d'effectuer une conversion totalement fiable. 
+				</p>
+			</section>
+				
+			<!--Section dédiée au calcul du poids en mangue-->
+			<section id="taille">
+				<h4>Quel est votre poids en mangues ?</h4>
+				<p>
+					Le poids de la mangue dans la société est un reflet de son influence. Plus le poids de la mangue est élevé, plus elle aura de chair à partager ! Sur ce modèle, nous pensons que plus votre poids en mangue est élevé, plus vous aurez de chose à transmettre à votre prochain. Vous êtes une admirable source de savoir.
+				</p>
+
+				<!--Entrée nombres pour l'âge avec un minimum de 0 pour éviter les nombres négatifs + bouton validation lié à un script JavaScript en bas de page-->
+				<input id="askPoids" type="number" placeholder="Entrez votre poids" min="0"/>
+				<input type="button" value="Calculer" onclick="calcPoids()"/>
+
+				<!--Balise p vide associée à un ID qui contiendra la réponse correspondante envoyée par un script JavaScript située en bas de page-->
+				<p>Résultat : </p><p id="rPoids"></p>
+				<p>
+					Le saviez-vous ? Le poids d'une mangue peut aller de 300g jusqu'à 700g ! Cela parait peut, si peu que le calculer en kg serait ridicule. Pourtant, de nombreux chercheurs de l'Institut Babakoul dans le Minnesota affirment que les humains cherchent souvent à s'affiner et à réduire leur poids. Ce phénomène a aussi été prouvé en 2012 grâce à l'invention de la balance.
+				</p>
+			</section>
+
+			<!--Section dédiée au calcul de la taille en mangue-->
+			<section id="valeur">
+				<h4>Quel est votre taille en mangue ?</h4>
+				<p>
+					La taille est quelque chose qui limite ou agrandi notre champ des possibles. En effet, selon que l'on soit petit ou grand, nous ne pourrons pas tous arriver à effectuer les mêmes actions, ou en tout cas de la même manière. Les humains ne naissent pas égaux et certains devront travailler plus dur que les autres pour arriver à atteindre leurs buts. On ne peut pas tous atteindre le haut de l'échelle saut sauter.
+				</p>
+
+				<!--Entrée nombres pour l'âge avec un minimum de 0 pour éviter les nombres négatifs + bouton validation lié à un script JavaScript en bas de page-->
+				<input id="askTaille" type="number" placeholder="Entrez votre taille en cm" min="0"/>
+				<input type="button" value="Calculer" onclick="calcTaille()"/>
+
+				<!--Balise p vide associée à un ID qui contiendra la réponse correspondante envoyée par un script JavaScript située en bas de page-->
+				<p>Résultat : </p><p id="rTaille"></p>
+			</section>
+
+			<!--Section dédiée au calcul du poucentage de mangue-->
+			<section>
+				<h4>Quel est votre pourcentage de mangue ?</h4>
+				<p>
+					Un rêve ? Oui. Ne faire qu'un avec la mangue ? Un but dans la vie. Voici un indicateur qui pourra vous aider dans votre quête de l'absolu ! Pour utiliser notre calculateur, vous aurez besoin de votre Indice de Masse Corporelle ou IMC. Voici quelques indications concernant l'IMC :
+				</p>
+				<h5>IMC = poids (en kg) / taille (en m)</h5>
+
+				<!--Tableau au sujet de l'IMC dont on voit les bordures-->
+				<table class="presentation" border="2" cellspacing="3" cellpadding="7" width="70%">
+					<tr>
+						<th>IMC</th>
+						<th>Interprétation</th>
+					</tr>
+					<tr>
+						<td>0 à 18.5</td>
+						<td>Insuffisance pondérale</td>
+					</tr>
+					<tr>
+						<td>18.5 à 25</td>
+						<td>Corpulence normale</td>
+					</tr>
+					<tr>
+						<td>25 à 30</td>
+						<td>Surpoids</td>
+					</tr>
+					<tr>
+						<td>30 à 35</td>
+						<td>Obésité modérée</td>
+					</tr>
+					<tr>
+						<td>35 à 40</td>
+						<td>Obésité sévère</td>
+					</tr>
+					<tr>
+						<td>40+</td>
+						<td>Obésité morbide</td>
+					</tr>
+				</table><br/>
+
+				<!--Entrée nombres pour l'âge avec un minimum de 0 pour éviter les nombres négatifs + bouton validation lié à un script JavaScript en bas de page-->
+				<input id="askImc" type="number" placeholder="Entrez votre IMC" min="0"/>
+				<input type="button" value="Calculer" onclick="calcValeur()"/>
+
+				<!--Balise p vide associée à un ID qui contiendra la réponse correspondante envoyée par un script JavaScript située en bas de page-->
+				<p>Résultat : </p><p id="rValeur"></p>
+				<script type="text/javascript">
+					// Fonction dédiée au calcul de l'âge en mangue
+					function calcAge()
+					{
+						// Récupération de l'âge entré via ID
+						var age = document.getElementById('askAge').value;
+
+						// Cas où l'entrée est vide
+						if (age==="")
+						{
+							alert('[ERREUR] : Vous n\'avez pas entré d\'âge !');
+						}
+
+						// Cas où le nombre est négatif
+						else if(parseInt(age) < 0)
+						{
+							alert('[ERREUR] : Vous avez entré un âge négatif !');
+						}
+
+						// Cas où tout est en règle
+						else
+						{
+							age=parseInt(age);
+							age = parseInt(age/365+(age*1.4));
+							// Insertion du résultat dans une balise p prévue à cet effet
+							document.getElementById("rAge").innerHTML=("Vous avez en réalité "+age+" mangues !");	
+						}
+							
+					}
+
+
+					// Fonction dédiée au calcul du poids en mangue
+					function calcPoids()
+					{
+						// Récupération du poids entré via ID
+						var poids = document.getElementById('askPoids').value;
+
+						// Cas où l'entrée est vide
+						if (poids==="")
+						{
+							alert('[ERREUR] : Vous n\'avez pas entré de poids !');
+						}
+
+						// Cas où le nombre entré est négatif
+						else if(parseInt(poids) < 0)
+						{
+							alert('[ERREUR] : Vous avez entré un poids négatif !');
+						}
+
+						// Cas où tout est en règle
+						else
+						{
+							poids=parseInt(poids);
+							poids = parseInt(poids/0.7);
+							// Insertion du résultat dans une balise p prévue à cet effet
+							document.getElementById("rPoids").innerHTML=("Vous pesez en réalité "+poids+" mangues !");	
+						}
+					}
+
+					// Fonction dédiée au calcul de la taille en mangue
+					function calcTaille()
+					{
+						// Récupération de la taille entrée via ID
+						var taille = document.getElementById('askTaille').value;
+
+						// Cas où l'entrée est vide
+						if (taille === "")
+						{
+							alert('[ERREUR] : Vous n\'avez pas entré de taille !');
+						}
+
+						// Cas où le nombre entré est négatif
+						else if(parseInt(taille) < 0)
+						{
+							alert('[ERREUR] : Vous avez entré une taille négative !');
+						}
+
+						// Cas où tout est en règle
+						else
+						{
+							taille=parseInt(taille);
+							taille = parseInt(5*taille);
+							// Insertion du résultat dans une balise p prévue à cet effet
+							document.getElementById("rTaille").innerHTML=("Vous mesurez en réalité "+taille+" mangues !");	
+						}
+					}
+
+					// Fonction dédiée au calcul du pourentage en mangue
+					function calcValeur()
+					{
+						// Récupération de l'IMC entré via ID
+						var valeur = document.getElementById('askImc').value;
+
+						// Cas où l'entrée est vide
+						if (valeur==="")
+						{
+							alert('[ERREUR] : Vous n\'avez pas entré d\'IMC !');
+						}
+
+						// Cas où le nombre est négatif
+						else if(parseInt(valeur) < 0)
+						{
+							alert('[ERREUR] : Vous avez entré un IMC négatif !');
+						}
+
+						// Cas où tout est en règle
+						else
+						{
+							valeur=parseInt(valeur);
+							valeur = parseInt(23*valeur*(1.45*valeur)/1000);
+							// Insertion du résultat dans une balise p prévue à cet effet
+							document.getElementById("rValeur").innerHTML=("Vous êtes composé à "+valeur+"% de mangues !");	
+						}
+					}
+				</script>
+			</section>
+		</section>
+
+		<!--Section dédiée au pied de la page-->
+		<section id=footer>
+			<a href="#top"><button id=anchor>Haut de page</button><br/></a>
+			<img src="images/mague_petit.png" width="10%" height="10%" alt='Image de mangue'/>
+			
+			<!--Je signe mon site internet et j'avertis l'utilisateur de la nature entièrement fictive des faits avancés-->
+			<p id=footer>
+				Le contenu de ce site est entièrement fictif.<br/>Toute ressemblance avec la réalité est purement fortuite.<br/>Copyright © 2022 Vienne Mathys. Tous droits réservés.
+			</p>
+		</section>
+	</body>
+</html>
